@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/container"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/head"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/control_activity_back_height"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="@dimen/control_activity_back_width"
+            android:layout_height="@dimen/control_activity_back_height"
+            android:layout_marginLeft="10px"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="实时控制"
+            android:textColor="#68C5D7"
+            android:textSize="36px" />
+
+        <ImageView
+            android:id="@+id/sound"
+            android:layout_width="@dimen/control_activity_back_width"
+            android:layout_height="@dimen/control_activity_back_height"
+            android:layout_marginRight="20px"
+            android:src="@drawable/sound" />
+    </LinearLayout>
+
+    <com.yeezone.ui.DegreeClock
+        android:id="@+id/timerClock"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/timer_clock_height"
+        android:layout_below="@id/head" />
+
+    <TextView
+        android:id="@+id/t"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/timerClock"
+        android:textColor="#000000"
+        android:alpha="0.6"
+        android:layout_marginLeft="60px"
+        android:textSize="24px"
+        android:text="温度控制" />
+
+    <com.yeezone.ui.VerticalSeekBarLayout
+        android:id="@+id/seekContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/t"
+        android:orientation="horizontal" >
+        
+        <com.yeezone.ui.VerticalTempratureText 
+            android:layout_marginLeft="60px"
+            android:layout_height="440px"
+            android:layout_width="wrap_content"/>
+
+        <com.yeezone.ui.VerticalSeekBar
+            android:id="@+id/seekbar1"
+            android:padding="12dp"
+            app:min="30"
+            android:max="60"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:thumb="@drawable/circle_point" />
+        
+       <com.yeezone.ui.VerticalSeekBar
+           android:id="@+id/seekbar2"
+            android:padding="12dp"
+            app:min="30"
+            android:max="60"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:thumb="@drawable/circle_point" />
+       <com.yeezone.ui.VerticalSeekBar
+           android:id="@+id/seekbar3"
+            android:padding="12dp"
+            app:min="38"
+            android:max="60"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:thumb="@drawable/circle_point" />
+       <com.yeezone.ui.VerticalSeekBar
+           android:id="@+id/seekbar4"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            app:min="30"
+            android:max="60"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:thumb="@drawable/circle_point" />
+    </com.yeezone.ui.VerticalSeekBarLayout>
+    
+    <LinearLayout 
+        android:id="@+id/control_buttons"
+        android:visibility="gone"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bottom_bg"
+        android:layout_width="fill_parent"
+        android:orientation="horizontal">
+        <Button 
+            android:text="结束理疗"
+            android:id="@+id/stop"
+            android:background="@drawable/button_bg"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:layout_weight="1"/>
+        <Button 
+            android:text="暂停"
+            android:id="@+id/pause"
+            android:background="@drawable/button_bg"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:layout_weight="1"/>
+    </LinearLayout>
+    
+    <Button 
+        android:id="@+id/start"
+        android:text="开始理疗"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:background="@drawable/button_bg"/>
+
+</RelativeLayout>

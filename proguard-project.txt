@@ -1,0 +1,132 @@
+# To enable ProGuard in your project, edit project.properties
+# to define the proguard.config property as described in that file.
+#
+# Add project specific ProGuard rules here.
+# By default, the flags in this file are appended to flags specified
+# in ${sdk.dir}/tools/proguard/proguard-android.txt
+# You can edit the include path and order by changing the ProGuard
+# include property in project.properties.
+#
+# For more details, see
+#   http://developer.android.com/guide/developing/tools/proguard.html
+
+# Add any project specific keep options here:
+
+# If your project uses WebView with JS, uncomment the following
+# and specify the fully qualified class name to the JavaScript interface
+# class:
+#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
+#   public *;
+#}
+-dontwarn com.actionbarsherlock.**
+-dontshrink
+-dontoptimize
+-dontwarn com.google.android.maps.**
+-dontwarn android.webkit.WebView
+-dontwarn com.umeng.**
+-dontwarn com.tencent.weibo.sdk.**
+
+-libraryjars E:/eclipse/library/umeng_android_social_sdk_3.3.6_custom/social_sdk_library_project/libs/SocialSDK_QQZone_2.jar
+#-libraryjars H:/MyPrivateAndroid/MyApp/makeMoney/library/social_sdk_library_project/libs/SocialSDK_QQZone_2.jar
+
+-keepattributes Exceptions,InnerClasses,Signature
+-keepattributes *Annotation*
+-keepattributes SourceFile,LineNumberTable
+
+-keep public interface com.tencent.**
+
+-keep public class javax.**
+-keep public class android.webkit.**
+
+-keep public class com.tencent.** {*;}
+
+-keep class com.tencent.mm.sdk.openapi.WXMediaMessage {*;}
+
+-keep class com.tencent.mm.sdk.openapi.** implements com.tencent.mm.sdk.openapi.WXMediaMessage$IMediaObject {*;}
+
+#umeng 
+-keepclassmembers class * {
+   public <init>(org.json.JSONObject);
+}
+-keep class **.R$* {   *;  }
+-keepclassmembers enum * {
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
+-keep public class com.umeng.fb.ui.ThreadView {
+}
+-keep class com.umeng.**{*;}
+#end umeng
+#umen push
+-keep,allowshrinking class org.android.agoo.service.* {
+    public <fields>;
+    public <methods>;
+}
+
+-keep,allowshrinking class com.umeng.message.* {
+    public <fields>;
+    public <methods>;
+}
+#youmi
+-dontwarn net.youmi.android.**
+-keep class net.youmi.android.** {
+    *;
+}
+#dianle
+-dontwarn com.apollo.**
+-keep class **.R$* { *;  
+}
+#yingao
+-keep class org.adver.score.**{*;}
+-keep public class com.winad.android.offers.** {
+*;
+}
+-keep public class com.baidu.location.** {
+*;
+}
+#duomen start
+-dontwarn cn.dm.**
+-keep class cn.dm.** { *; }
+-keep class cn.dm.android.ui.interaction.** {*;}
+-keepattributes *Annotation*
+#duomen end
+#guomeng
+-keep class cn.guomob.android.intwal.**{*;}
+-keep interface cn.guomob.android.intwal.**{*;}
+#youmeng
+-keep class com.ads8.**{*;}
+-keep class net.tsz.afinal.**{*;}
+#mumayi
+#-libraryjars libs/dyk.jar 
+#-keep public class com.dyk.hadsdk.**{
+#*;
+#} 
+#jiongyou
+-dontwarn com.jy.func.**
+-keep class com.jy.func.**{*;}
+#zhimeng
+-keep class com.ZMAD.offer.**{*;}
+#diancai
+-keep class com.dc.wall.**{*;}
+#beiduo
+-keep class com.bb.dd.* { *;  
+}
+
+
+-keep class com.lw.help.TextViewProxy{*;}
+-keep class com.sun.**{*;}
+-keep class com.javax.**{*;}
+-keep class com.lw.communication.ExchangeEntity{*;}
+-keep class com.lw.communication.Device{*;}
+-keep class com.lw.communication.OrderInfo{*;}
+-keep class com.lw.communication.OrderRespon{*;}
+-keep class com.lw.parameter.Config{*;}
+-keep class com.lw.rank.QueryPayEntity{*;}
+-keep class com.lw.rank.PayEntity{*;}
+-keep class com.lw.rank.RankEntity{*;}
+-keep class com.lw.communication.AppInfo{*;}
+-keep class com.lw.communication.ObjectInfo{*;}
+-keep class com.lw.communication.**{*;}
+-keep class com.qidian.intwal.**{*;}
+-keep public interface com.qidian.intwal.** {*;}
+#-keep class com.nineoldandroids.**{*;}

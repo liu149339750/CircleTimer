@@ -1,0 +1,11 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    
+    <dimen name="control_activity_back_width">60px</dimen>
+	<dimen name="control_activity_back_height">60px</dimen>
+	
+	<dimen name="timer_clock_height">574px</dimen>
+</resources>
